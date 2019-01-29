@@ -5,11 +5,24 @@ import {
     Text,
     TouchableOpacity,
     StatusBar,
-    TextInput
+    TextInput,
+    Image
 } from 'react-native';
 import { createStackNavigator, NavigationActions, StackActions } from 'react-navigation';
 
+import {
+    Icon, 
+    Button, 
+    Container, 
+    Header, 
+    Content, 
+    Left,
+    Body
+} from 'native-base';
+
 import styles from '../styles/home';
+
+import CustomHeader from '../components/CustomHeader';
 
 export default class Home extends Component {
     constructor(props){
@@ -25,7 +38,15 @@ export default class Home extends Component {
     }
 
     static navigationOptions = ({navigation}) => ({
-        header: null,
+        title: "Home",
+        headerLeft: <Icon name="ios-menu" style={{paddingleft: 10}} onPress={() => navigation.navigate('DrawerOpen')}/>,
+        drawerLabel: 'Home',
+        drawerIcon: ({ tintcolor }) => (
+            <Image
+                source={require('../assets/home.png')}
+                style={styles.icon}
+            />
+        ),
     });
 
     componentDidMount(){
@@ -34,20 +55,17 @@ export default class Home extends Component {
 
     render(){
         return(
-            <View style={styles.viewContainer}>    
-                <View style={styles.containerInput}>
-                    <TextInput
-                        style={styles.input}
-                        placeholder={this.state.login}
-                        onChangeText={(login) => this.setState({login})}
-                    />
-                    <TextInput
-                        style={styles.input}
-                        secureTextEntry={true}
-                        placeholder={"Senha"}
-                        onChangeText={(senha) => this.setState({senha})}
-                    />
-                </View>
+            <View style={styles.viewContainer}>
+                <CustomHeader title='Home' drawerOpen={() => this.props.navigation.navigate('DrawerOpen')} />
+
+                <Content contentContainerStyle={styles.content}>
+                    <Button
+                        onPress={() => this.props.navigation.navigate('Profile')}
+                        full
+                    >
+                        <Text>Go to Profile screen</Text>
+                    </Button>
+                </Content>
             </View>
         );
     }

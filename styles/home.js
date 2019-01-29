@@ -7,9 +7,7 @@ const styles = StyleSheet.create({
         height: '100%',
         backgroundColor: '#18121E', //navy blue
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingTop: 10
+        paddingTop: 0
     },
 
     text:{
@@ -28,6 +26,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
+    icon:{
+        width:24,
+        height:24
+    },
+    content:{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding:10
+    }
 
 });
 
