@@ -63,15 +63,15 @@ const MyDrawerNavigator = createDrawerNavigator(
     Login: {
       screen: Login
     },
-    Profile: {
-      screen: Profile
-    },
-    Home:{
+    Home: {
       screen: Home
+    },
+    Profile:{
+      screen: Profile
     }
   },
   {
-    initialRouteName:'Login',
+    initialRouteName:'Profile',
     contentComponent: CustomDrawerContentComponent,
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',

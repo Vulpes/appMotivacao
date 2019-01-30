@@ -20,17 +20,23 @@ import {
 
 export default class MenuL extends Component {
 
-
     render() {
         return(
             <Header>
                 <Left>
-                    <Icon name="ios-menu" onPress={() => this.props.drawerOpen()}/>
+                    <Button transparent onPress={() => this.props.drawerOpen()}>
+                        <Icon name="ios-menu" onPress={() => this.props.drawerOpen()}/>
+                    </Button>
                 </Left>
-                <Body style={{alignItems: 'center'}}>
+                <Right/>
+                <Body>
                     <Text styles={{alignItems: 'center'}}>{this.props.title}</Text>
                 </Body>
-                <Right/>
+                <Right>
+                    <Button transparent>
+                        <Icon name="more"/>
+                    </Button>
+                </Right>
             </Header>
         );
     }
