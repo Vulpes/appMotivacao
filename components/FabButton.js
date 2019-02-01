@@ -14,18 +14,15 @@ export default class FabButton extends Component {
             active={this.state.active}
             direction="up"
             containerStyle={{ }}
-            style={{ backgroundColor: '#EAC67A' }}
+            style={{ backgroundColor: '#EAC67A', position: "absolute" }}
             position="bottomRight"
             onPress={() => this.setState({ active: !this.state.active })}>
-            <Icon name="share" />
-            <Button style={{ backgroundColor: '#34A34F' }}>
-              <Icon name="logo-whatsapp" />
-            </Button>
+            <Icon name="book" />
             <Button style={{ backgroundColor: '#3B5998' }}>
-              <Icon name="logo-facebook" />
+              <Icon name="document" />
             </Button>
             <Button disabled style={{ backgroundColor: '#DD5144' }}>
-              <Icon name="mail" />
+              <Icon name="contacts" />
             </Button>
           </Fab>
     );

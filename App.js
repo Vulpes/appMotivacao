@@ -71,7 +71,7 @@ const MyDrawerNavigator = createDrawerNavigator(
     }
   },
   {
-    initialRouteName:'Profile',
+    initialRouteName:'Home',
     contentComponent: CustomDrawerContentComponent,
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',
