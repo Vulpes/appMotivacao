@@ -24,6 +24,22 @@ const styles = StyleSheet.create({
         backgroundColor:'#984B43'
     },
 
+    form: {
+        alignItems: 'center',
+        width: '80%'
+    },
+
+    general:{
+        flex:1,
+        alignItems: 'center',
+    },
+    
+    thumb: {
+        alignItems: 'center',
+        width: '100%',
+        paddingTop: 5
+    }
+
 });
 
 export default styles;

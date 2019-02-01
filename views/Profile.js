@@ -3,7 +3,8 @@ import {
     View,
     Text,
     StatusBar,
-    Image
+    Image,
+    TextInput
 } from 'react-native';
 
 import {
@@ -32,8 +33,8 @@ export default class Profile extends Component {
             age: '',
             profession: '',
             zipCode: '',
-            password: '',
-            email:'',
+            password: 'teste',
+            email:'teste@teste.com',
             editable: false,
             secure: true,
             hide: true,
@@ -58,80 +59,87 @@ export default class Profile extends Component {
 
     render(){
         return(
-            <View>
+            <View style={{flex: 1}}>
                 <CustomHeader title='Profile' drawerOpen={() => this.props.navigation.navigate('DrawerOpen')} />
 
-                <View style={styles.thumb}>
-                    <Thumbnail large source={require('../assets/perf.jpg')}/>
-                </View>
-                <View styel={styles.form}>
-                    <Form>
-                        <Item stackedLabel>
-                            <Label>Username</Label>
-                            <Input
-                                placeholder={this.state.name}
-                                editable={this.state.editable}
-                                onChangeText={(name) => this.setState({name})}
-                            />
-                        </Item>
-                        <Item stackedLabel>
-                            <Label>E-mail</Label>
-                            <Input
-                                placeholder={this.state.email}
-                                editable={this.state.editable}
-                                onChangeText={(email) => this.setState({email})}
-                            />
-                        </Item>
-                        <Item stackedLabel>
-                            <Label>Zip Code</Label>
-                            <Input
-                                placeholder={this.state.zipCode}
-                                editable={this.state.editable}
-                                onChangeText={(zipCode) => this.setState({zipCode})}
-                            />
-                        </Item>
-                        <Item stackedLabel>
-                            <Label>Age</Label>
-                            <Input
-                                placeholder={this.state.age}
-                                editable={this.state.editable}
-                                onChangeText={(age) => this.setState({age})}
-                            />
-                        </Item>
-                        <Item stackedLabel>
-                            <Label>Profession</Label>
-                            <Input
-                                placeholder={this.state.profession}
-                                editable={this.state.editable}
-                                onChangeText={(prof) => this.setState({profession: prof})}
-                            />
-                        </Item>
-                        <Item stackedLabel>
-                            <Label>Password</Label>
-                            <Input
-                                placeholder={"*****"}
-                                editable={this.state.editable}
-                                secureTextEntry={this.state.secure}
-                                onChangeText={(pass) => this.setState({password: pass})}
-                            />
-                        </Item>
-                    </Form>
-                </View>
-                <View>
-                    {
-                        this.state.hide ? 
-                            <Button primary onPress={() => this._edit()}>
-                                <Text style={{color:'white'}}> Edit Profile </Text>
-                            </Button>
-                        :
-                            <Button primary onPress={() => this._save()}>
-                                <Text style={{color:'white'}}> Save Changes </Text>
-                            </Button>
+                <View style={styles.general}>
+                    <View style={styles.thumb}>
+                        <Thumbnail large source={require('../assets/perf.jpg')}/>
+                        <Text>{this.state.name}</Text>
+                    </View>
+                    <View styel={styles.form}>
+                        <Form>
+                            <Item stackedLabel>
+                                <Label>Username</Label>
+                                <Input
+                                    placeholder={""}
+                                    editable={this.state.editable}
+                                    onChangeText={(name) => this.setState({name})}
+                                    maxLength={40}
+                                />
+                            </Item>
+                            <Item stackedLabel>
+                                <Label>E-mail</Label>
+                                <Input
+                                    placeholder={""}
+                                    editable={this.state.editable}
+                                    onChangeText={(email) => this.setState({email})}
+                                    maxLength={40}
+                                />
+                            </Item>
+                            <Item stackedLabel>
+                                <Label>Zip Code</Label>
+                                <Input
+                                    placeholder={""}
+                                    editable={this.state.editable}
+                                    onChangeText={(zipCode) => this.setState({zipCode})}
+                                    maxLength={10}
+                                />
+                            </Item>
+                            <Item stackedLabel>
+                                <Label>Age</Label>
+                                <Input
+                                    placeholder={""}
+                                    editable={this.state.editable}
+                                    onChangeText={(age) => this.setState({age})}
+                                    maxLength={3}
+                                />
+                            </Item>
+                            <Item stackedLabel>
+                                <Label>Profession</Label>
+                                <Input
+                                    placeholder={""}
+                                    editable={this.state.editable}
+                                    onChangeText={(prof) => this.setState({profession: prof})}
+                                    maxLength={20}
+                                />
+                            </Item>
+                            <Item stackedLabel>
+                                <Label>Password</Label>
+                                <Input
+                                    editable={this.state.editable}
+                                    secureTextEntry={this.state.secure}
+                                    placeholder={"*************"}
+                                    onChangeText={(password) => this.setState({password})}
+                                    multiline={false}
+                                />
+                            </Item>
+                        </Form>
+                    </View>
+                    <View style={{paddingTop: 10}}>
+                        {
+                            this.state.hide ? 
+                                <Button primary onPress={() => this._edit()}>
+                                    <Text style={{color:'white'}}> Edit Profile </Text>
+                                </Button>
+                            :
+                                <Button primary onPress={() => this._save()}>
+                                    <Text style={{color:'white'}}> Save Changes </Text>
+                                </Button>
                         
-                    }
-                    
-
-                </View>
+                        }
+                    </View>
+                </View>               
             </View>
         );
     }

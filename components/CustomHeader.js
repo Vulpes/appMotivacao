@@ -4,7 +4,8 @@ import { DrawerNavigator } from 'react-navigation';
 
 import {
     View,
-    Text
+    Text,
+    Alert
 } from 'react-native';
 
 import {
@@ -15,7 +16,8 @@ import {
     Content,
     Left,
     Right,
-    Body
+    Body,
+    Title
 } from 'native-base';
 
 export default class MenuL extends Component {
@@ -30,10 +32,10 @@ export default class MenuL extends Component {
                 </Left>
                 <Right/>
                 <Body>
-                    <Text styles={{alignItems: 'center'}}>{this.props.title}</Text>
+                    <Text style={{color: 'white', fontFamily:'Roboto', alignItems: 'center', fontSize: 20}}>{this.props.title}</Text>
                 </Body>
                 <Right>
-                    <Button transparent>
+                    <Button transparent onPress={() => alert('Teste')}>
                         <Icon name="more"/>
                     </Button>
                 </Right>
