@@ -2,18 +2,12 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     
-    viewContainer: {
+    scrollView: {
         width: '100%',
         height: '100%',
         backgroundColor: '#18121E', //navy blue
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingTop: 10
-    },
-
-    text:{
-        color: '#984B43', //rusty red
+        paddingTop:0,
     },
 
     input: {
@@ -24,10 +18,25 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
 
-    containerInput:{
+    viewTittle:{
+        backgroundColor: 'white',
         alignItems: 'center',
-        justifyContent: 'center'
+        width: '90%',
+        height: 100,
+        justifyContent: 'center',
+        borderRadius: 5
     },
+
+    icon:{
+        width:24,
+        height:24
+    },
+    content:{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding:10
+    }
 
 });
 
