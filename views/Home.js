@@ -7,7 +7,7 @@ import {
     TextInput,
     Image,
     Text, 
-    ScrollView
+    ScrollView,
 } from 'react-native';
 import { createStackNavigator, NavigationActions, StackActions } from 'react-navigation';
 
@@ -53,7 +53,7 @@ export default class Home extends Component {
     render(){
         return(
             <View style={{flex: 1}}>
-                <CustomHeader title='Home' drawerOpen={() => this.props.navigation.navigate('DrawerOpen')} />
+                <CustomHeader title='Home' drawerOpen={() => this.props.navigation.openDrawer()} />
                 <View style={{flex: 3}}>
                     <ScrollView style={styles.scrollView}>
                     
@@ -76,7 +76,7 @@ export default class Home extends Component {
                         
                     </ScrollView>
                     <View style={{position: 'relative', left: 0, right:0 }}>
-                        <FabButton/>
+                        <FabButton />
                     </View>
                 </View>
                 

@@ -17,7 +17,8 @@ import {
 import Home from './views/Home';
 import Profile from  './views/Profile';
 import Login from './views/Login';
-
+import Contacts from './views/Contacts';
+import Register from './views/Register';
 
 const App = createBottomTabNavigator(
   {
@@ -68,10 +69,16 @@ const MyDrawerNavigator = createDrawerNavigator(
     },
     Profile:{
       screen: Profile
+    },
+    Contacts:{
+      screen: Contacts
+    },
+    Register: {
+      screen: Register
     }
   },
   {
-    initialRouteName:'Home',
+    initialRouteName:'Register',
     contentComponent: CustomDrawerContentComponent,
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',

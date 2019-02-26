@@ -60,7 +60,7 @@ export default class Profile extends Component {
     render(){
         return(
             <View style={{flex: 1}}>
-                <CustomHeader title='Profile' drawerOpen={() => this.props.navigation.navigate('DrawerOpen')} />
+                <CustomHeader title='Profile' drawerOpen={() => this.props.navigation.openDrawer()} />
 
                 <View style={styles.general}>
                     <View style={styles.thumb}>

@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { Container, Header, View, Button, Icon, Fab } from 'native-base';
+
+import { createStackNavigator, NavigationActions, StackActions } from 'react-navigation';
 export default class FabButton extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
+
     this.state = {
-      active: 'true'
+      active: false
     };
   }
+
   render() {
     return (
         <Fab
@@ -21,7 +25,9 @@ export default class FabButton extends Component {
             <Button style={{ backgroundColor: '#3B5998' }}>
               <Icon name="document" />
             </Button>
-            <Button disabled style={{ backgroundColor: '#DD5144' }}>
+            <Button disabled style={{ backgroundColor: '#DD5144' }} 
+              onPress={()=> NavigationActions.navigate({routeName: 'Contacts'})} 
+            >
               <Icon name="contacts" />
             </Button>
           </Fab>
