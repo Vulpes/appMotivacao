@@ -12,10 +12,14 @@ import {
     Form,
     Thumbnail,
     Item,
-    Input, 
+    /*Input,*/ 
     Label,
     Button
 } from 'native-base';
+
+import {
+    Input
+} from 'react-native-elements';
 
 import styles from '../styles/profile';
 
