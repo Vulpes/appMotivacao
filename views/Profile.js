@@ -51,7 +51,7 @@ export default class Profile extends Component {
 
     static navigationOptions = ({navigation}) => ({
         title: "Home",
-        headerLeft: <Icon name="ios-menu" style={{paddingleft: 10}} onPress={() => navigation.navigate('DrawerOpen')}/>,
+        headerLeft: <Icon name="ios-menu" style={{paddingleft: 10}} onPress={() => navigation.navigate.openDrawer()}/>,
         drawerLabel: 'Profile',
         drawerIcon: ({ tintcolor }) => (
             <Image
@@ -64,7 +64,7 @@ export default class Profile extends Component {
     render(){
         return(
             <View style={{flex: 1}}>
-                <CustomHeader title='Profile' drawerOpen={() => this.props.navigation.navigate('DrawerOpen')} />
+                <CustomHeader title='Profile' drawerOpen={() => this.props.navigation.openDrawer()} />
 
                 <View style={styles.general}>
                     <View style={styles.thumb}>

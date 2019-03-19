@@ -36,7 +36,7 @@ export default class Home extends Component {
 
     static navigationOptions = ({navigation}) => ({
         title: "Home",
-        headerLeft: <Icon name="ios-menu" style={{paddingleft: 10}} onPress={() => navigation.navigate('DrawerOpen')}/>,
+        headerLeft: <Icon name="ios-menu" style={{paddingleft: 10}} onPress={() => this.props.navigation.openDrawer()}/>,
         drawerLabel: 'Home',
         drawerIcon: ({ tintcolor }) => (
             <Image
@@ -53,7 +53,7 @@ export default class Home extends Component {
     render(){
         return(
             <View style={{flex: 1}}>
-                <CustomHeader title='Home' drawerOpen={() => this.props.navigation.navigate('DrawerOpen')} />
+                <CustomHeader title='Home' drawerOpen={() => this.props.navigation.openDrawer()} />
                 <View style={{flex: 3}}>
                     <ScrollView style={styles.scrollView}>
                     
